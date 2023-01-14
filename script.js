@@ -41,4 +41,15 @@ const calcCalories = function () {
   }
 };
 
+const clearValues = function () {
+  gender.value = "";
+  weight.value = "";
+  height.value = "";
+  age.value = "";
+  activity.value = "";
+  goal.value = "";
+  containerResult.classList.remove("active");
+};
+
 btnCalc.addEventListener("click", calcCalories);
+btnClear.addEventListener("click", clearValues);
