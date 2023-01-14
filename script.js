@@ -7,25 +7,22 @@ const activity = document.querySelector("#activity");
 const goal = document.querySelector("#goal");
 const btnCalc = document.querySelector("#btn-calculate");
 const btnClear = document.querySelector("#btn-clear");
-
-const container = document.querySelector("#container");
+const cont = document.querySelector("#container-result");
 
 const cleanCode = function (BMR) {
   const TDEE = BMR * Number(activity.value);
-  const calories = TDEE + TDEE * (Number(goal.value) / 100);
-  console.log(calories);
+  const calories = Math.floor(TDEE + TDEE * (Number(goal.value) / 100));
   const protein = Math.floor((calories * 0.205) / 4);
   const carbohydrate = Math.floor((calories * 0.545) / 4);
   const fat = Math.floor((calories * 0.25) / 9);
+  cont.classList.add("active");
   const html = `
-Your Ideal Calories are: ${calories}</br>
+Calories: ${calories}</br>
 Protein*:${protein}</br>
 carbohydrate:${carbohydrate}</br>
 Fat:${fat}
-
-*=Optimal protein intake is your kg*2,sometimes the number is too much
 `;
-  container.insertAdjacentHTML("afterbegin", html);
+  cont.innerHTML = html;
 };
 
 const calcCalories = function () {
