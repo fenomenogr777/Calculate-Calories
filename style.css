@@ -65,7 +65,7 @@ body {
   font-size: 20px;
   margin-top: 20px;
   cursor: pointer;
-  border: 1px solid #4831d4;
+  border: 2px solid #4831d4;
   transition: all 400ms ease;
 }
 
@@ -80,7 +80,7 @@ body {
 .btn.btn-clear {
   background: #fff;
   color: var(--blue-main);
-  border: 1px solid #4831d4;
+  border: 2px solid #4831d4;
 }
 
 input,
