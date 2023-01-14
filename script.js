@@ -7,7 +7,7 @@ const activity = document.querySelector("#activity");
 const goal = document.querySelector("#goal");
 const btnCalc = document.querySelector("#btn-calculate");
 const btnClear = document.querySelector("#btn-clear");
-const cont = document.querySelector("#container-result");
+const containerResult = document.querySelector("#container-result");
 
 const cleanCode = function (BMR) {
   const TDEE = BMR * Number(activity.value);
@@ -18,11 +18,11 @@ const cleanCode = function (BMR) {
   cont.classList.add("active");
   const html = `
 Calories: ${calories}</br>
-Protein*:${protein}</br>
-carbohydrate:${carbohydrate}</br>
-Fat:${fat}
+Protein: ${protein}</br>
+carbohydrate: ${carbohydrate}</br>
+Fat: ${fat}
 `;
-  cont.innerHTML = html;
+  containerResult.innerHTML = html;
 };
 
 const calcCalories = function () {
