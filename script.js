@@ -12,10 +12,15 @@ const containerResult = document.querySelector("#container-result");
 const cleanCode = function (BMR) {
   const TDEE = BMR * Number(activity.value);
   const calories = Math.floor(TDEE + TDEE * (Number(goal.value) / 100));
-  const protein = Math.floor((calories * 0.205) / 4);
-  const carbohydrate = Math.floor((calories * 0.545) / 4);
-  const fat = Math.floor((calories * 0.25) / 9);
-  cont.classList.add("active");
+  let protein = Math.floor((calories * 0.27) / 4);
+  let carbohydrate = Math.floor((calories * 0.5) / 4);
+  const fat = Math.floor((calories * 0.23) / 9);
+  if (protein >= Number(weight.value * 2)) {
+    carbohydrate += protein - Number(weight.value * 2);
+    protein = weight.value * 2;
+  }
+
+  containerResult.classList.add("active");
   const html = `
 Calories: ${calories}</br>
 Protein: ${protein}</br>
