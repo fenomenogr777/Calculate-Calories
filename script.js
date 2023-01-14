@@ -31,6 +31,15 @@ Fat: ${fat}
 };
 
 const calcCalories = function () {
+  if (
+    !gender.value ||
+    !weight.value ||
+    !height.value ||
+    !age.value ||
+    !activity.value ||
+    !goal.value
+  )
+    return alert("ERROR: Please fill the form!!!");
   const genderValue = gender.value;
   if (genderValue === "male") {
     const BMR = 66 + 13.7 * weight.value + 5 * height.value - 6.8 * age.value;
